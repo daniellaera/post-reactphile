@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
-    "watch": "nodemon server/index.js"
+    "watch": "nodemon server/index.js",
+    "apollo": "node server/apollo.js"
   },
   "repository": {
     "type": "git",
@@ -19,11 +20,13 @@
   },
   "homepage": "https://github.com/daniellaera/post-reactphile#readme",
   "dependencies": {
+    "apollo-server": "^3.6.4",
     "body-parser": "^1.19.2",
     "cors": "^2.8.5",
     "express": "^4.17.3",
     "pg": "^8.7.3",
-    "postgraphile": "^4.12.9"
+    "postgraphile": "^4.12.9",
+    "postgraphile-apollo-server": "^0.1.1"
   },
   "devDependencies": {
     "dotenv": "^16.0.0",
