@@ -22,7 +22,7 @@ services:
       FLYWAY_USER: admin
       FLYWAY_PASSWORD: postgres_admin_dev
       FLYWAY_DEFAULT_SCHEMA: flyway
-      FLYWAY_SCHEMAS: "public,flyway,baltic_index"
+      FLYWAY_SCHEMAS: "public,flyway"
       FLYWAY_LOCATIONS: "filesystem:/workspaces/post-reactphile/db_migrations"
 
     # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
