@@ -17,9 +17,9 @@
         "previewLimit": 50,
         "server": "localhost",
         "port": 5432,
-        "database": "postgres",
+        "database": "post-reactphile",
         "username": "postgres",
-        "password": "postgres"
+        "password": "postgres_dev"
       }
     ]
   },

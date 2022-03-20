@@ -1,8 +1,8 @@
-version: '3.8'
+version: "3.8"
 
 services:
   app:
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile
       args:
@@ -13,9 +13,17 @@ services:
 
     volumes:
       - ..:/workspace:cached
-      
+
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
+
+    environment:
+      FLYWAY_URL: "jdbc:postgresql://localhost:5432/post-reactphile"
+      FLYWAY_USER: admin
+      FLYWAY_PASSWORD: postgres_admin_dev
+      FLYWAY_DEFAULT_SCHEMA: flyway
+      FLYWAY_SCHEMAS: "public,flyway,baltic_index"
+      FLYWAY_LOCATIONS: "filesystem:/workspaces/post-reactphile/db_migrations"
 
     # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
     network_mode: service:db
@@ -23,18 +31,24 @@ services:
     # Uncomment the next line to use a non-root user for all processes.
     # user: node
 
-    # Use "forwardPorts" in **devcontainer.json** to forward an app port locally. 
+    # Use "forwardPorts" in **devcontainer.json** to forward an app port locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
 
   db:
-    image: postgres:latest
+    build:
+      context: ./images/database
+      dockerfile: Dockerfile
     restart: unless-stopped
     volumes:
       - postgres-data:/var/lib/postgresql/data
     environment:
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_PASSWORD: postgres_dev
       POSTGRES_USER: postgres
-      POSTGRES_DB: postgres
+      POSTGRES_DB: post-reactphile
+      SERVER_PASSWORD: postgres_server_dev
+      ADMIN_PASSWORD: postgres_admin_dev
+      SYNC_PASSWORD: postgres_sync_dev
+      NOTIFICATION_DISPATCHER_PASSWORD: postgres_notification_dispatcher_dev
 
     # Add "forwardPorts": ["5432"] to **devcontainer.json** to forward PostgreSQL locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
