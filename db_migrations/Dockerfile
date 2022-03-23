@@ -1,2 +1,2 @@
-FROM flyway/flyway:latest
+FROM flyway/flyway
 COPY . /flyway/sql
