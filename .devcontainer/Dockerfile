@@ -10,6 +10,8 @@ RUN wget -qO- https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/8.5
 # [Optional] Uncomment if you want to install an additional version of node using nvm
 # ARG EXTRA_NODE_VERSION=10
 # RUN su node -c "source /usr/local/share/nvm/nvm.sh && nvm install ${EXTRA_NODE_VERSION}"
+
+# this is important for recognizing the flyway command especially on macos
 RUN apt-get update && \
 apt-get install -y --no-install-recommends \
         openjdk-11-jre
