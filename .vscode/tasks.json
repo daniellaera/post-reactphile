@@ -1,0 +1,20 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "apollo",
+      "problemMatcher": [],
+      "label": "npm: apollo",
+      "detail": "node server/apollo.js"
+    },
+    {
+      "label": "React Run",
+      "command": "npm",
+      "args": ["start"],
+      "options": {
+        "cwd": "${workspaceFolder}/client"
+      }
+    }
+  ]
+}

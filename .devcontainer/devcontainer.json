@@ -31,7 +31,8 @@
     "mutantdino.resourcemonitor",
     "wix.vscode-import-cost",
     "esbenp.prettier-vscode",
-    "eamodio.gitlens"
+    "eamodio.gitlens",
+    "graphql.vscode-graphql"
   ],
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // This can be used to network with other containers or with the host.
