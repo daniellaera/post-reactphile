@@ -13,7 +13,7 @@ COMMENT ON TABLE public.user IS
 CREATE TABLE public.post (
     id SERIAL PRIMARY KEY,
     title TEXT,
-    body TEXT,
+    body TEXT NOT NULL,
     created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     author_id INTEGER NOT NULL REFERENCES public.user(id)
 );
