@@ -28,10 +28,10 @@ const ADD_TODO = gql`
   }
 `;
 
-export const Link = () => {
+export const Link = (): any => {
   // const { data } = useQuery(FEED_QUERY);
-  let title;
-  let body;
+  let title: any;
+  let body: any;
   const [addTodo, { data, loading, error }] = useMutation(ADD_TODO);
 
   if (loading) return "Submitting...";

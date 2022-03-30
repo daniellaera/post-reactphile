@@ -6,7 +6,7 @@
       "script": "apollo",
       "problemMatcher": [],
       "label": "npm: apollo",
-      "detail": "node server/apollo.js"
+      "detail": "ts-node server/apollo.ts"
     },
     {
       "label": "React Run",
